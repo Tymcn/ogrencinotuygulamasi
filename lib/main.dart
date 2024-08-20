@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:notlar/NotDetaySayfa.dart';
 import 'package:notlar/NotKayitSayfa.dart';
 import 'package:notlar/Notlar.dart';
+import 'package:notlar/Notlardao.dart';
 import 'package:notlar/ekrandetay.dart';
 
 void main() {
@@ -32,19 +33,7 @@ class Anasayfa extends StatefulWidget {
 
 class _AnasayfaState extends State<Anasayfa> {
   Future<List<Notlar>> tumNotlarGoster() async {
-    var notlarListesi = <Notlar>[];
-
-    var n1 = Notlar(1, "Matematik", 100, 25);
-    var n2 = Notlar(2, "Geometri", 100, 25);
-    var n3 = Notlar(3, "Fizik", 100, 25);
-    var n4 = Notlar(4, "Kimya", 100, 25);
-    var n5 = Notlar(5, "Biyoloji", 100, 25);
-
-    notlarListesi.add(n1);
-    notlarListesi.add(n2);
-    notlarListesi.add(n3);
-    notlarListesi.add(n4);
-    notlarListesi.add(n5);
+    var notlarListesi = await Notlardao().tumNotlar();
 
     return notlarListesi;
   }

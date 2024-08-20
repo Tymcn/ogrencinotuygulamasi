@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:notlar/Notlardao.dart';
 import 'package:notlar/main.dart';
 
 class NotKayitSayfa extends StatefulWidget {
@@ -14,7 +15,7 @@ class _NotKayitSayfaState extends State<NotKayitSayfa> {
   var tfnot2 = TextEditingController();
 
   Future<void> kayit(String ders_adi, int not1, int not2) async {
-    print("$ders_adi- $not1 - $not2 kayıt edildi.");
+    await Notlardao().notEkle(ders_adi, not1, not2);
     Navigator.push(
         context,
         MaterialPageRoute(
