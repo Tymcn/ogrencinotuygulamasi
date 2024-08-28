@@ -19,11 +19,11 @@ class _NotDetaySayfaState extends State<NotDetaySayfa> {
   var tfnot1 = TextEditingController();
   var tfnot2 = TextEditingController();
 
-  Future<void> sil( int notid) async {
+  Future<void> sil( int not_id) async {
     await Notlardao().notSil(not_id);
     Navigator.push(context,MaterialPageRoute(builder: (context) => Anasayfa(),));
   }
-  Future<void> guncelleme( int notid,String ders_adi, int not1, int not2) async {
+  Future<void> guncelleme( int not_id,String ders_adi, int not1, int not2) async {
     await Notlardao().notGuncelle(not_id, ders_adi, not1, not2);
     Navigator.push(context,MaterialPageRoute(builder: (context) => Anasayfa(),));
   }
